@@ -44,9 +44,9 @@ export const CreateTaskModal = () => {
           </h3>
           <button
             onClick={() => setIsCreateTaskOpen(false)}
-            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}
+            className="modal-close-btn"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
         </div>
 

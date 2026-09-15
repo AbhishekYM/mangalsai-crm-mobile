@@ -50,18 +50,7 @@ export const LiveGpsTrackerModal = () => {
           </div>
           <button
             onClick={() => setSelectedGpsOrder(null)}
-            style={{ 
-              background: 'var(--bg-secondary)', 
-              border: '1px solid var(--border-color)', 
-              borderRadius: '50%',
-              width: '32px',
-              height: '32px',
-              display: 'flex',
-              alignItems: 'center',
-              justify: 'center',
-              color: 'var(--text-secondary)', 
-              cursor: 'pointer' 
-            }}
+            className="modal-close-btn"
           >
             <X size={18} />
           </button>
