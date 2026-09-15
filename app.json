@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Mangalsai CRM",
+    "slug": "mangalsai-crm-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./public/logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./public/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F4F7F6"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./public/logo.png",
+        "backgroundColor": "#F4F7F6"
+      },
+      "package": "com.mangalsai.crm"
+    },
+    "web": {
+      "favicon": "./public/logo.png"
+    }
+  }
+}
