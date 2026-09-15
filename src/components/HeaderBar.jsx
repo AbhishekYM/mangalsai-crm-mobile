@@ -65,7 +65,7 @@ export const HeaderBar = () => {
         </div>
 
         {/* Action Controls */}
-        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexShrink: 0 }}>
           {/* WhatsApp AI Shortcut */}
           <button
             onClick={() => openWhatsAppSmartSummarizer('daily')}
@@ -74,15 +74,19 @@ export const HeaderBar = () => {
               background: 'rgba(0, 180, 115, 0.12)',
               border: '1px solid rgba(0, 180, 115, 0.35)',
               color: 'var(--accent-mint)',
-              padding: '6px 10px',
+              padding: '6px 12px',
               borderRadius: '10px',
               fontSize: '11px',
               fontWeight: '700',
               fontFamily: 'var(--font-display)',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
-              gap: '4px',
-              cursor: 'pointer'
+              justifyContent: 'center',
+              gap: '5px',
+              cursor: 'pointer',
+              lineHeight: 1,
+              outline: 'none',
+              transition: 'all 0.2s ease'
             }}
           >
             <MessageSquareShare size={13} />
@@ -97,17 +101,25 @@ export const HeaderBar = () => {
               background: 'var(--bg-card)',
               border: '1px solid var(--border-color)',
               color: 'var(--text-primary)',
-              width: '32px',
-              height: '32px',
+              width: '34px',
+              height: '34px',
+              minWidth: '34px',
+              minHeight: '34px',
               borderRadius: '10px',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               justify: 'center',
+              padding: 0,
+              margin: 0,
               cursor: 'pointer',
-              flexShrink: 0
+              flexShrink: 0,
+              lineHeight: 1,
+              outline: 'none',
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'all 0.2s ease'
             }}
           >
-            {isFullscreen ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
+            {isFullscreen ? <Minimize2 size={16} color="var(--accent-mint)" /> : <Maximize2 size={16} color="var(--accent-mint)" />}
           </button>
         </div>
       </div>
