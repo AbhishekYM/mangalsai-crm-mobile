@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCRM } from '../context/CRMContext';
-import { X, CheckCircle, PhoneCall, DollarSign } from 'lucide-react';
+import { X, CheckCircle, PhoneCall, DollarSign, Building2, User } from 'lucide-react';
 
 export const LogFollowUpModal = () => {
   const { selectedCollection, setSelectedCollection, logCollectionFollowUp, recordPayment } = useCRM();
@@ -22,17 +22,24 @@ export const LogFollowUpModal = () => {
     e.preventDefault();
     if (!paymentAmt || Number(paymentAmt) <= 0) return;
     recordPayment(selectedCollection.id, paymentAmt);
+    setPaymentAmt('');
   };
 
   return (
     <div className="modal-overlay">
-      <div className="modal-sheet">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+      <div className="modal-sheet" style={{ padding: '24px' }}>
+        {/* Modal Header */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '18px' }}>
           <div>
-            <h3 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--text-primary)' }}>
+            <h3 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
               Log Collection Follow-up
             </h3>
-            <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{selectedCollection.customer}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '3px' }}>
+              <Building2 size={13} color="var(--accent-mint)" />
+              <span style={{ fontSize: '12px', color: 'var(--accent-mint)', fontWeight: '700', fontFamily: 'var(--font-display)' }}>
+                {selectedCollection.customer}
+              </span>
+            </div>
           </div>
           <button
             onClick={() => setSelectedCollection(null)}
@@ -42,53 +49,85 @@ export const LogFollowUpModal = () => {
           </button>
         </div>
 
-        {/* Current Balance Card */}
+        {/* Crisp 2-Column Balance & Assigned Executive Card */}
         <div style={{
-          background: 'var(--bg-secondary)',
-          borderRadius: '12px',
-          padding: '10px 14px',
-          marginBottom: '14px',
-          display: 'flex',
-          justify: 'space-between',
-          alignItems: 'center'
+          background: 'var(--bg-card)',
+          border: '1.5px solid var(--border-color)',
+          borderRadius: '20px',
+          padding: '16px 18px',
+          marginBottom: '18px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '12px',
+          alignItems: 'center',
+          boxShadow: 'var(--shadow-sm)'
         }}>
+          {/* Left Column: Outstanding Amount */}
           <div>
-            <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Current Due:</div>
-            <div style={{ fontSize: '18px', fontWeight: '800', color: 'var(--status-danger)' }}>
+            <div style={{ fontSize: '10px', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-display)' }}>
+              CURRENT DUE AMOUNT
+            </div>
+            <div style={{ fontSize: '22px', fontWeight: '700', color: 'var(--status-danger)', fontFamily: 'var(--font-display)', marginTop: '2px' }}>
               ₹{selectedCollection.outstandingAmount.toLocaleString('en-IN')}
             </div>
           </div>
-          <span className="badge badge-primary">{selectedCollection.assignedExecutive}</span>
+
+          {/* Right Column: Assigned Executive (Aligned Right) */}
+          <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+            <div style={{ fontSize: '10px', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+              ASSIGNED EXEC
+            </div>
+            <span className="badge badge-mint" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <User size={12} /> {selectedCollection.assignedExecutive}
+            </span>
+          </div>
         </div>
 
-        {/* Record Payment Option */}
+        {/* Quick Record Payment Option */}
         <div style={{
           background: 'var(--status-success-bg)',
-          border: '1px solid var(--status-success)',
-          borderRadius: '12px',
-          padding: '12px',
-          marginBottom: '16px'
+          border: '1.5px solid rgba(0, 180, 115, 0.35)',
+          borderRadius: '18px',
+          padding: '16px',
+          marginBottom: '20px'
         }}>
-          <div style={{ fontSize: '12px', fontWeight: '800', color: 'var(--status-success)', marginBottom: '6px' }}>
+          <div style={{ 
+            fontSize: '13px', 
+            fontWeight: '700', 
+            color: 'var(--status-success)', 
+            marginBottom: '10px', 
+            fontFamily: 'var(--font-display)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px'
+          }}>
             💳 Quick Record Payment Received
           </div>
-          <div style={{ display: 'flex', gap: '6px' }}>
+          
+          <div style={{ marginBottom: '10px' }}>
             <input
               type="number"
-              placeholder="Enter collected amount (₹)"
+              placeholder="Enter Collected Amount (₹)"
               value={paymentAmt}
               onChange={(e) => setPaymentAmt(e.target.value)}
               className="form-input"
-              style={{ flex: 1 }}
+              style={{ 
+                width: '100%', 
+                padding: '12px 14px', 
+                fontSize: '13px',
+                fontWeight: '600',
+                background: '#FFFFFF'
+              }}
             />
-            <button
-              onClick={handlePaymentSubmit}
-              className="btn btn-sm"
-              style={{ background: 'var(--status-success)', color: 'white' }}
-            >
-              Record Payment
-            </button>
           </div>
+
+          <button
+            onClick={handlePaymentSubmit}
+            className="btn btn-mint btn-full"
+            style={{ padding: '11px 16px', borderRadius: '12px', fontSize: '13px' }}
+          >
+            Record Payment
+          </button>
         </div>
 
         {/* Log Call Outcome Form */}
@@ -129,7 +168,7 @@ export const LogFollowUpModal = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary btn-full">
+          <button type="submit" className="btn btn-mint btn-full" style={{ padding: '14px', borderRadius: '16px', fontSize: '14px' }}>
             <PhoneCall size={16} />
             Save Call Log & Schedule Follow-up
           </button>
