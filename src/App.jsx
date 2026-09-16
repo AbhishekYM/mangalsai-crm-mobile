@@ -35,25 +35,10 @@ const ScreenRouter = () => {
 };
 
 const MainContent = () => {
-  const { isFullscreen } = useCRM();
-
   return (
     <div className="app-wrapper">
-      {/* Smartphone Titanium Enclosure */}
-      <div className={`device-frame ${isFullscreen ? 'fullscreen' : ''}`}>
-        {/* Android Status Bar & Camera Notch Pill */}
-        <div className="android-status-bar">
-          <div className="camera-notch">
-            <div className="camera-lens" />
-          </div>
-          <span>09:41</span>
-          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-            <span>5G</span>
-            <span>📶</span>
-            <span>🔋 96%</span>
-          </div>
-        </div>
-
+      {/* Native Full-Bleed Mobile App Container */}
+      <div className="device-frame">
         {/* Top Header Bar */}
         <HeaderBar />
 

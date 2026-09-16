@@ -1,10 +1,10 @@
 import React from 'react';
 import { useCRM } from '../context/CRMContext';
-import { Maximize2, Minimize2, MessageSquareShare, UserCheck } from 'lucide-react';
+import { MessageSquareShare, UserCheck } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 export const HeaderBar = () => {
-  const { activeRole, setActiveRole, isFullscreen, setIsFullscreen, openWhatsAppSmartSummarizer } = useCRM();
+  const { activeRole, setActiveRole, openWhatsAppSmartSummarizer } = useCRM();
 
   const roles = [
     { id: 'Manager', label: '👑 Owner / Manager' },
@@ -74,52 +74,24 @@ export const HeaderBar = () => {
               background: 'rgba(0, 180, 115, 0.12)',
               border: '1px solid rgba(0, 180, 115, 0.35)',
               color: 'var(--accent-mint)',
-              padding: '6px 12px',
-              borderRadius: '10px',
+              padding: '8px 14px',
+              borderRadius: '12px',
               fontSize: '11px',
               fontWeight: '700',
               fontFamily: 'var(--font-display)',
               display: 'inline-flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              gap: '5px',
-              cursor: 'pointer',
-              lineHeight: 1,
-              outline: 'none',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            <MessageSquareShare size={13} />
-            <span>WA AI</span>
-          </button>
-
-          {/* Fullscreen Preview Toggle */}
-          <button
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            title={isFullscreen ? "Exit Fullscreen" : "Fullscreen Preview"}
-            style={{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border-color)',
-              color: 'var(--text-primary)',
-              width: '34px',
-              height: '34px',
-              minWidth: '34px',
-              minHeight: '34px',
-              borderRadius: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
               justify: 'center',
-              padding: 0,
-              margin: 0,
+              gap: '6px',
               cursor: 'pointer',
-              flexShrink: 0,
               lineHeight: 1,
               outline: 'none',
-              boxShadow: 'var(--shadow-sm)',
+              boxShadow: '0 2px 6px rgba(0, 180, 115, 0.15)',
               transition: 'all 0.2s ease'
             }}
           >
-            {isFullscreen ? <Minimize2 size={16} color="var(--accent-mint)" /> : <Maximize2 size={16} color="var(--accent-mint)" />}
+            <MessageSquareShare size={14} />
+            <span>WA Assistant</span>
           </button>
         </div>
       </div>
