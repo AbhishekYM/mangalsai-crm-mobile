@@ -28,84 +28,104 @@ export const DashboardScreen = () => {
 
   return (
     <div className="screen-container">
-      {/* Electric Cyber-Emerald Hero Card */}
+      {/* Futuristic Cyber-Emerald Hero Banner */}
       <div style={{
-        background: 'linear-gradient(135deg, #00F5A0 0%, #00D9F6 100%)',
-        borderRadius: '24px',
-        padding: '22px',
-        color: '#030509',
-        marginBottom: '20px',
-        boxShadow: '0 8px 30px rgba(0, 245, 160, 0.35)',
+        background: 'linear-gradient(135deg, #061B14 0%, #00422B 50%, #008756 100%)',
+        borderRadius: '26px',
+        padding: '24px',
+        color: '#FFFFFF',
+        marginBottom: '22px',
+        boxShadow: '0 14px 40px rgba(0, 180, 115, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        border: '1.5px solid rgba(0, 245, 160, 0.35)'
       }}>
+        {/* Background Glowing Vector Mesh */}
+        <div style={{
+          position: 'absolute',
+          top: '-50%',
+          right: '-20%',
+          width: '240px',
+          height: '240px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(0, 245, 160, 0.25) 0%, transparent 70%)',
+          pointerEvents: 'none'
+        }} />
+
         <div style={{ position: 'relative', zIndex: 2 }}>
           <div style={{
             fontSize: '10px',
             fontWeight: '800',
             textTransform: 'uppercase',
-            letterSpacing: '1px',
-            background: 'rgba(3, 5, 9, 0.15)',
-            padding: '4px 10px',
-            borderRadius: '12px',
-            display: 'inline-block',
-            marginBottom: '8px',
+            letterSpacing: '1.5px',
+            background: 'rgba(0, 245, 160, 0.15)',
+            color: '#00F5A0',
+            border: '1px solid rgba(0, 245, 160, 0.4)',
+            padding: '5px 12px',
+            borderRadius: '20px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            marginBottom: '10px',
             fontFamily: 'var(--font-display)'
           }}>
-            {activeRole === 'Manager' ? 'Executive Desk' : `${activeRole} Portal`}
+            <span className="pulse-dot-mint" style={{ width: '6px', height: '6px' }} />
+            {activeRole === 'Manager' ? 'Executive Cyber Desk' : `${activeRole} Portal`}
           </div>
 
-          <h2 style={{ fontSize: '22px', fontWeight: '700', fontFamily: 'var(--font-display)', lineHeight: 1.1, color: '#030509' }}>
-            Mangalsai Business Suite
+          <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: 'var(--font-display)', lineHeight: 1.15, color: '#FFFFFF', letterSpacing: '-0.5px' }}>
+            Mangalsai Business OS
           </h2>
-          <p style={{ fontSize: '12px', marginTop: '6px', opacity: 0.9, fontWeight: '600', lineHeight: 1.4 }}>
-            Centralized Dispatch, Task Operations & Revenue Desk.
+          <p style={{ fontSize: '12px', marginTop: '6px', color: 'rgba(255, 255, 255, 0.85)', fontWeight: '500', lineHeight: 1.45 }}>
+            Centralized Dispatch, Live Telematics & Revenue Operations Desk.
           </p>
 
-          {/* Quick Action Buttons */}
-          <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
+          {/* Futuristic Quick Action Buttons */}
+          <div style={{ display: 'flex', gap: '12px', marginTop: '18px' }}>
             <button
               onClick={() => setIsCreateTaskOpen(true)}
               style={{
                 flex: 1,
-                padding: '10px 14px',
-                borderRadius: '12px',
-                background: '#030509',
-                color: '#00F5A0',
+                padding: '12px 16px',
+                borderRadius: '14px',
+                background: 'linear-gradient(135deg, #00F5A0 0%, #00B473 100%)',
+                color: '#030E09',
                 border: 'none',
-                fontSize: '12px',
-                fontWeight: '700',
+                fontSize: '13px',
+                fontWeight: '800',
                 fontFamily: 'var(--font-display)',
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'center',
+                justifyContent: 'center',
                 gap: '6px',
+                boxShadow: '0 6px 20px rgba(0, 245, 160, 0.4)',
                 cursor: 'pointer'
               }}
             >
-              <Plus size={15} /> Create Task
+              <Plus size={16} /> Create Task
             </button>
 
             <button
               onClick={() => setIsCreateOrderOpen(true)}
               style={{
                 flex: 1,
-                padding: '10px 14px',
-                borderRadius: '12px',
-                background: 'rgba(3, 5, 9, 0.12)',
-                color: '#030509',
-                border: '1px solid rgba(3, 5, 9, 0.3)',
-                fontSize: '12px',
+                padding: '12px 16px',
+                borderRadius: '14px',
+                background: 'rgba(255, 255, 255, 0.12)',
+                color: '#FFFFFF',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                backdropFilter: 'blur(10px)',
+                fontSize: '13px',
                 fontWeight: '700',
                 fontFamily: 'var(--font-display)',
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'center',
+                justifyContent: 'center',
                 gap: '6px',
                 cursor: 'pointer'
               }}
             >
-              <ShoppingBag size={15} /> New Order
+              <ShoppingBag size={16} /> New Order
             </button>
           </div>
         </div>

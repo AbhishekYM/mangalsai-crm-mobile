@@ -6,24 +6,26 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
-  /* EXCLUSIVE PRISTINE LIGHT THEME */
-  --bg-app: #E2EAF4;
-  --bg-primary: #F4F7F6;
+  /* EXCLUSIVE FUTURISTIC PRISTINE CYBER LIGHT THEME */
+  --bg-app: #EAF2F0;
+  --bg-primary: #F2F7F5;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #EDF3F0;
-  --bg-secondary: #EDF3F0;
+  --bg-card-hover: #EBF5F1;
+  --bg-secondary: #E8F3EE;
 
-  --border-color: rgba(0, 180, 115, 0.18);
-  --border-glow: rgba(0, 180, 115, 0.4);
+  --border-color: rgba(0, 180, 115, 0.22);
+  --border-glow: rgba(0, 245, 160, 0.5);
 
-  --text-primary: #0A1410;
-  --text-secondary: #364B44;
-  --text-muted: #6B827A;
+  --text-primary: #06120D;
+  --text-secondary: #2B423A;
+  --text-muted: #5B756C;
 
-  /* Signature Accents */
+  /* Signature Cyber-Emerald Accents */
   --accent-mint: #00B473;
-  --accent-cyan: #00A3C4;
-  --accent-gradient: linear-gradient(135deg, #00B473 0%, #00A3C4 100%);
+  --accent-neon: #00F5A0;
+  --accent-cyan: #00D9F6;
+  --accent-gradient: linear-gradient(135deg, #00F5A0 0%, #00B473 60%, #00A3C4 100%);
+  --accent-gradient-glow: linear-gradient(135deg, rgba(0, 245, 160, 0.2) 0%, rgba(0, 180, 115, 0.1) 100%);
 
   --status-success: #00B473;
   --status-success-bg: rgba(0, 180, 115, 0.12);
@@ -34,12 +36,12 @@
   --status-info: #0284C7;
   --status-info-bg: rgba(2, 132, 199, 0.12);
 
-  --header-bg: rgba(255, 255, 255, 0.96);
-  --bottom-nav-bg: rgba(255, 255, 255, 0.96);
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --bottom-nav-bg: rgba(255, 255, 255, 0.94);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 10px 25px rgba(0, 180, 115, 0.08);
-  --shadow-mint-glow: 0 0 20px rgba(0, 180, 115, 0.25);
+  --shadow-sm: 0 4px 14px rgba(0, 180, 115, 0.06);
+  --shadow-md: 0 12px 32px rgba(0, 180, 115, 0.1);
+  --shadow-mint-glow: 0 0 25px rgba(0, 245, 160, 0.35);
 }
 
 * {
